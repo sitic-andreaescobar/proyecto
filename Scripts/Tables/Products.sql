@@ -11,7 +11,7 @@ BEGIN
 		[Current_Stock]		INT NOT NULL, --Existencia actual del producto
 		[Max_Stock]			INT NOT NULL, --Existencia máxima del producto
 		[Min_Stock]			INT NOT NULL, --Existencia mínima del producto
-		[Stock_Status_Id]	INT NOT NULL, --Relación con la tabla Stock_Status
+		[Stock_Status_Id]	INT NULL, --Relación con la tabla Stock_Status
 		[Image_Path]		VARCHAR(255), --Ruta de la imagen
 		[Created_At]		DATETIME DEFAULT GETDATE(), --Fecha de creación del producto
 		[Updated_At]		DATETIME DEFAULT GETDATE(), --Fecha de última actualización del producto
