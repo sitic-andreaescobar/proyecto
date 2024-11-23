@@ -173,9 +173,9 @@ namespace Utilities
             return new(ex.Message, ex switch
             {
                 ExceptionWeb => ((ExceptionWeb)ex).ErrorType,
-                FormatException or InvalidCastException => eErrorType.FormatError,
-                SqlException => eErrorType.SqlError,
-                _ => eErrorType.UnknownError
+                FormatException or InvalidCastException => eErrorType.Format,
+                SqlException => eErrorType.Sql,
+                _ => eErrorType.Unknown
             });
         }
     }
