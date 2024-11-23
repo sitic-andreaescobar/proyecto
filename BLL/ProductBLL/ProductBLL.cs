@@ -9,7 +9,7 @@ using VO;
 
 namespace BLL
 {
-    class ProductBLL
+    public class ProductBLL
     {
         #region Variables & properties
         ProductDAL _dal;
@@ -42,6 +42,7 @@ namespace BLL
                 return Utilities.CommonUtils.ConvertDataTableToList<Product>(dt);
         }
 
+        
         public bool ExecuteDBAction(eDbAction action, Product product)
         {
             bool ok;
@@ -51,9 +52,9 @@ namespace BLL
 
                 ok = action switch
                 {
-                    eDbAction.Insert => false,
-                    eDbAction.Update => false,
-                    eDbAction.Delete => false,
+                    eDbAction.Insert => Insert(product),
+                    eDbAction.Update => Update(product),
+                    eDbAction.Delete => Delete(product.Id),
                     _ => false
                 };
 
