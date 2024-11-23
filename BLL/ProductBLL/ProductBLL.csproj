@@ -5,10 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="DAO">
       <HintPath>..\..\Ensamblados\net5.0\DAO.dll</HintPath>
 		<SpecificVersion>false</SpecificVersion>
     </Reference>
+	  <Reference Include="Helpers">
+		  <HintPath>..\..\Ensamblados\net5.0\Helpers.dll</HintPath>
+		  <SpecificVersion>false</SpecificVersion>
+	  </Reference>
     <Reference Include="VO">
       <HintPath>..\..\Ensamblados\net5.0\VO.dll</HintPath>
 		<SpecificVersion>false</SpecificVersion>
