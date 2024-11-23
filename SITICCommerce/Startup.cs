@@ -27,6 +27,19 @@ namespace SITICCommerce
         {
 
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader());
+                options.AddPolicy("Angular",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .WithHeaders("access-control-allow-origin", "authorization", "content-type")
+                            .WithMethods("GET", "POST", "PUT", "DELETE");
+                    });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SITICCommerce", Version = "v1" });
@@ -42,6 +55,8 @@ namespace SITICCommerce
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SITICCommerce v1"));
             }
+
+            app.UseCors("Angular");
 
             app.UseRouting();
             
