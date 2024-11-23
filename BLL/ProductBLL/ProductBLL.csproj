@@ -4,4 +4,15 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="DAO">
+      <HintPath>..\..\Ensamblados\net5.0\DAO.dll</HintPath>
+		<SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="VO">
+      <HintPath>..\..\Ensamblados\net5.0\VO.dll</HintPath>
+		<SpecificVersion>false</SpecificVersion>
+	</Reference>
+  </ItemGroup>
+
 </Project>
